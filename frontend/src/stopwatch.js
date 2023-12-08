@@ -2,12 +2,21 @@ import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import './stopwatch.css';
-
+import axios from 'axios';
 
 const Stopwatch=()=>{
     const [time,setTime]=useState(0);
     const [timeron,setTimeon]=useState(false);
 
+    const handleReset=async()=>
+    {
+        const  response = await axios.post("http://localhost:8000/stopwatch/"+time);
+    console.log(response);
+        setTime(0);
+    }
+
+
+    
      useEffect(()=>{
         let interval=null;
 
@@ -40,7 +49,7 @@ const Stopwatch=()=>{
             }
             {timeron&&(  <button onClick={()=>setTimeon(false)}>Stop</button>)}
             { !timeron&& time!== 0&&(  <button onClick={()=>setTimeon(true)}>Resume</button>)}
-            { !timeron&& time >0&&(  <button onClick={()=>setTime(0)}>Reset</button>)}
+            { !timeron&& time >0&&(  <button onClick={handleReset}>Reset</button>)}
 
             </div>
             </div>
