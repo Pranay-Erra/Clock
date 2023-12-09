@@ -3,21 +3,23 @@ import { useState } from "react";
 import { useEffect } from "react";
 import './stopwatch.css';
 import axios from 'axios';
+import OffCanvasMenu from "./offcanvas";
 
 const Stopwatch=()=>{
     const [time,setTime]=useState(0);
     const [timeron,setTimeon]=useState(false);
+    const [isMenuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => {
+      setMenuOpen(!isMenuOpen);
+    };
     const handleReset=async()=>
     {
         const  response = await axios.post("http://localhost:8000/stopwatch/"+time);
     console.log(response);
         setTime(0);
     }
-
-
-    
-     useEffect(()=>{
+    useEffect(()=>{
         let interval=null;
 
         if(timeron){
@@ -36,7 +38,12 @@ const Stopwatch=()=>{
 
     return(
         <>
-        <div>
+       
+        <div className="stop_main">
+        <h1 className="heading">{localStorage.pur}</h1>
+         <div className="stop_inter">  
+         <h2 className="stopwatch">STOPWATCH</h2>
+        
             <div className="time">
                 <span>{("0"+Math.floor((time/60000)%60)).slice(-2)}:</span>
                 <span>{("0"+Math.floor((time/1000)%60)).slice(-2)}:</span>
@@ -44,15 +51,25 @@ const Stopwatch=()=>{
             </div>
             <div className="buttons">
                 {!timeron && time===0 &&(
-                <button onClick={()=>setTimeon(true)}>Start</button>
+                <button className="start" onClick={()=>setTimeon(true)}>Start</button>
                 )
             }
-            {timeron&&(  <button onClick={()=>setTimeon(false)}>Stop</button>)}
-            { !timeron&& time!== 0&&(  <button onClick={()=>setTimeon(true)}>Resume</button>)}
-            { !timeron&& time >0&&(  <button onClick={handleReset}>Reset</button>)}
-
+            {timeron&&(  <button className="stop" onClick={()=>setTimeon(false)}>Stop</button>)}
+            { !timeron&& time!== 0&&(  <button className="resume" onClick={()=>setTimeon(true)}>Resume</button>)}
+            { !timeron&& time >0 &&(  <button className="reset" onClick={handleReset}>Reset</button>)}
+           
+            </div>
+            <div className="hid">
+            <button className="hist" onClick={toggleMenu}>History</button>
             </div>
             </div>
+            </div>
+            <div>
+      
+      <OffCanvasMenu isOpen={isMenuOpen} toggleMenu={toggleMenu} />
+    </div>
+            
+            
         </>
     );
 }

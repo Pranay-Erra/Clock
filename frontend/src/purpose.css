@@ -1,4 +1,4 @@
-.stop_main{
+.purpose_main{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -7,7 +7,7 @@
     height: 100vh;
 }
 
-.stop_inter{
+.purpose_inter{
     background-color: white;
     width: 30%;
     height: 50%;
@@ -18,48 +18,53 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-.heading{
-    text-decoration: underline;
-}
-
-.stopwatch{
-    text-decoration: underline;
+.purpose_3,.purpose_4{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     background-color: azure;
 }
 
-span{
-    background-color: azure;
-    font-size: 60px;
-}
-
-
-.start,
-.stop,
-.resume,
-.reset,.hist {
-  height: 40px;
-  font-weight: bold;
-  font-size: 15px;
-  border-radius: 5px;
-  background-color: black;
-  color: azure;
-  width: 80px;
-  margin-right: 10px; /* Add margin to create space between buttons */
-}
-
-.buttons,.hid{
+label,input{
     background-color: azure;
 }
 
+.putin{
+    height: 30px;
+    width: 200px;
+    font-size: 20px;
+}
 
-.start:hover,.stop:hover,.resume:hover,.reset:hover,.hist:hover{
+label{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+.putin_2{
+    width: 180px;
+    font-size: 20px;
+    border: 2px solid black;
+    background-color: azure;
+}
+
+.Submit{
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color:black;
+    color:azure;
+    width: 80px;
+}
+
+.Submit:hover{
     background-color: azure;
     color: black;
     border: 3px solid black;
     cursor: pointer;
 }
 
-.hid{
-    display: flex;
-    padding-left: 75%;
+h3{
+    background-color: azure;
 }

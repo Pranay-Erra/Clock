@@ -1,0 +1,59 @@
+*{
+    background-color: beige;
+}
+
+
+.home_main
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+    height: 100vh;
+}
+
+
+.home_inter{
+    background-color: white;
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+.clock,.clock_2{
+    background-color: white;
+}
+
+.clock_2{
+   font-size:50px;
+}
+
+
+.goto
+{
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color:black;
+    color:azure;
+}
+
+
+.goto:hover{
+    background-color: azure;
+    color: black;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.hef{
+    background-color: azure;
+    text-decoration:underline;
+}
