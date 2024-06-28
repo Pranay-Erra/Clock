@@ -7,7 +7,7 @@ export const Demo = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/demo");
+        const response = await axios.get("https://clock-1-vz1p.onrender.com/demo");
         console.log(response.data);
         setData(response.data);
       } catch (error) {

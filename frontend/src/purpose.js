@@ -10,7 +10,7 @@ const Purpose=()=>
     const [purpose,setPurpose]=useState('');
     const nav=useNavigate();
   const handleSubmit = async() => {
-    const  response = await axios.post("http://localhost:8000/purpose/"+purpose);
+    const  response = await axios.post("https://clock-1-vz1p.onrender.com/purpose/"+purpose);
     console.log(response);
     if(purpose)
     {

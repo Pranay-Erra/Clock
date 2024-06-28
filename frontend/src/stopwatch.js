@@ -15,7 +15,7 @@ const Stopwatch=()=>{
     };
     const handleReset=async()=>
     {
-        const  response = await axios.post("http://localhost:8000/stopwatch/"+time);
+        const  response = await axios.post("https://clock-1-vz1p.onrender.com/stopwatch/"+time);
     console.log(response);
         setTime(0);
     }
