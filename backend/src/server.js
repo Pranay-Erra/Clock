@@ -7,17 +7,22 @@ app.use(express.json())
 
 app.use(cors())
 
-connectToDB(()=>
-{
-    app.listen(8000,()=>
-    {
-        console.log('server started at 8000');
-    });
-})
+const PORT = process.env.PORT || 8000;
 
-app.get('/',(req,res)=>{
-    res.send("Server Running Successfully ✅");
-    });
+
+connectToDB(() => {
+  app.listen(PORT, () => {
+    console.log(`Server started at ${PORT}`);
+  });
+});
+
+app.get('/', (req, res) => {
+  res.send("Server Running Successfully ✅");
+});
+
+app.get('/hello', (req, res) => {
+  res.status(200).send('OK');
+});
 
 
 app.post('/stopwatch/:hist',async(req,res)=>
