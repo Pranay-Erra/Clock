@@ -12,7 +12,7 @@ const OffCanvasMenu = ({ isOpen, toggleMenu }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:8000/stopwatch");
+        const response = await axios.get("https://clock-1-vz1p.onrender.com/stopwatch");
         console.log(response.data);
         setData(response.data);
       } catch (error) {
