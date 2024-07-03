@@ -1,28 +1,31 @@
 .off-canvas-menu {
   position: fixed;
   top: 0;
-  right: -270px; /* Adjust as needed for your menu width */
+  right: -250px; /* Adjust as needed for your menu width */
   width: 250px;
   height: 100%;
   background-color: #333;
   color: white;
   padding: 20px;
   transition: transform 0.3s ease-in-out;
-  overflow: scroll;
+  overflow-y: auto; /* Use overflow-y for vertical scroll only */
 }
 
 .off-canvas-menu.open {
   transform: translateX(-250px);
 }
 
-
-.close_button{
-  background-color:#333 ;
+.close_button {
+  background-color: #333;
   color: azure;
   cursor: pointer;
+  padding: 10px;
+  border: none;
 }
 
-
-.done,.done_time{
+.done, .done_time {
   background-color: #333;
+  color: white;
+  padding: 10px;
+  margin-top: 10px;
 }

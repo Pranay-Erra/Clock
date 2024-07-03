@@ -1,4 +1,4 @@
-*{
+/* *{
     background-color: beige;
 }
 
@@ -56,4 +56,84 @@
 .hef{
     background-color: azure;
     text-decoration:underline;
+} */
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Apply beige background to all elements */
+* {
+    background-color: beige;
+}
+
+.home_main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.home_inter {
+    background-color: white;
+    width: 80%; /* Adjust width for smaller screens */
+    max-width: 400px; /* Limit width for larger screens */
+    height: 50%; /* Adjust height for smaller screens */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    margin: 20px;
+}
+
+.clock, .clock_2 {
+    background-color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.clock_2 {
+    font-size: 3rem; /* Adjust font size for smaller screens */
+}
+
+.goto {
+    height: 40px;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: black;
+    color: azure;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+.goto:hover {
+    background-color: azure;
+    color: black;
+    border: 3px solid black;
+    cursor: pointer;
+}
+
+.hef {
+    background-color: azure;
+    text-decoration: underline;
+    text-align: center;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .home_inter {
+        width: 50%; /* Adjust width for larger screens */
+        max-width: 600px; /* Limit width for very large screens */
+    }
 }
